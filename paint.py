@@ -100,7 +100,7 @@ setup(420, 420, 370, 0)
 onscreenclick(tap)
 listen()
 onkey(undo, 'u')
-onkey(lambda: color('purple'), 'P') # New color added
+onkey(lambda: color('purple'), 'P') ### New color added
 onkey(lambda: color('black'), 'K')
 onkey(lambda: color('white'), 'W')
 onkey(lambda: color('green'), 'G')
