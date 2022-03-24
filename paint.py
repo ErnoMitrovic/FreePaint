@@ -36,9 +36,15 @@ def square(start, end):
     end_fill()
 
 
-def circle(start, end):
+def circlep(start, end):
     """Draw circle from start to end."""
-    pass  # TODO
+    up()
+    begin_fill()
+    goto(start.x, start.y)
+    down()
+    x = float(start.x) - float(end.x)   # Takes the radius from initial and final 'x'
+    circle(x)                           # Draws circle
+    end_fill()
 
 
 def rectangle(start, end):
@@ -94,6 +100,7 @@ setup(420, 420, 370, 0)
 onscreenclick(tap)
 listen()
 onkey(undo, 'u')
+onkey(lambda: color('purple'), 'P') # New color added
 onkey(lambda: color('black'), 'K')
 onkey(lambda: color('white'), 'W')
 onkey(lambda: color('green'), 'G')
