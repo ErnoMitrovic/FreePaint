@@ -43,12 +43,32 @@ def circle(start, end):
 
 def rectangle(start, end):
     """Draw rectangle from start to end."""
-    pass  # TODO
+    up()
+    goto(start.x, start.y)
+    down()
+    begin_fill()
+
+    for count in range(4):
+        if count % 2 == 0: forward(end.x - start.x) # Represents the bases of the rectangle
+        else: forward(end.y - start.y) # Represents the height of the rectangle
+        left(90)
+
+    end_fill()
 
 
 def triangle(start, end):
     """Draw triangle from start to end."""
-    pass  # TODO
+    up()
+    goto(start.x, start.y)
+    down()
+    begin_fill()
+    for i in range(3):
+        # Function to see the length of the triangle according to the component difference
+        length = lambda x, y: (x**2 + y**2)**0.5 if x > 0 or y > 0 else -(x**2 + y**2)**0.5
+        forward(length(end.x - start.x, end.x - start.x))
+        left(120) # Angle to rotate
+
+    end_fill()
 
 
 def tap(x, y):
